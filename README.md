@@ -1,18 +1,15 @@
 # QA_Project_2
 
 
-service 1: Weapon 
-classes
+service 1: 
+
+Service 2: Classess Generator
 
 
-Service 2: type of weapon
-Subclass
-
-
-service 3: randomise damage of the weapon
-randomise the build of the class
+service 3: Gender Generator
 
 
 service 4:
-sum up 
+Show the subclass of the character can chose from
+BirthPlace
 

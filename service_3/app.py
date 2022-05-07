@@ -3,11 +3,11 @@ import random
 
 app = Flask(__name__)
 
-gender = ['male','female']
+Gender = ['male','female']
 
 @app.route('/get/gender')
 def get_subclasses():
-    return random.choice(gender)
+    return random.choice(Gender)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
