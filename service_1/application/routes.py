@@ -7,12 +7,8 @@ import requests, json
 @app.route('/', methods=['GET', 'POST'])
 def index():
     classess = requests.get('http://service_2:5002/get/classes').text
+    
 
     content = {'classess': classes, 'gender': gender}
-
-
-
-
-
 
     return render_template('index.html')

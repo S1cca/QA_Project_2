@@ -1,0 +1,1 @@
+export DATABASE_URI=mysql+pymysql://root:password@35.242.133.231:3306/project_2
