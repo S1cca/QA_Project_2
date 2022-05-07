@@ -3,7 +3,7 @@ import random
 
 app = Flask(__name__)
 
-Gender = ['male','female']
+Gender = ['Male','Female']
 
 @app.route('/get/gender')
 def get_subclasses():
