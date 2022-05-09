@@ -1,7 +1,7 @@
-FROM python:3.7-alpine
-WORKDIR /app
-COPY . /app/
-RUN pip install -r requirements.txt
+FROM python:3.8
+WORKDIR /service_1
+COPY . .
+RUN pip3 install -r requirements.txt
 EXPOSE 5000
 ENTRYPOINT ["python3", "app.py"]
 

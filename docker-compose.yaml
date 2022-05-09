@@ -1,7 +1,40 @@
 version: "3.8"
 services:
-  nginx:
+  proxy:
+    container_name: nginx-proxy
     image: nginx:alpine
     ports:
-      - target: 80
-        protocol: tcp
+      - 80:80
+    volumes:
+      - type: bind
+        source: ./nginx.conf
+        target: /etc/nginx/nginx.conf
+    depends_on:
+      - service_1
+
+  service_1:
+    container_name: service_1
+    image: s1cca/service_1:latest
+    build: ./service_1
+    depends_on:
+      - service_2
+      - service_3
+      - service_4
+
+  service_2:
+    container_name: service_2
+    image: s1cca/service_2:latest
+    build: ./service_2
+
+  service_3:
+    container_name: service_3
+    image: s1cca/service_3:latest
+    build: ./service_3
+
+  service_4:
+    container_name: service_4
+    image: s1cca/service_4:latest
+    build: ./service_4
+    depends_on:
+      - service_2
+      - service_3

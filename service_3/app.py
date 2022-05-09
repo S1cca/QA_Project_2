@@ -5,9 +5,9 @@ app = Flask(__name__)
 
 Gender = ['Male','Female']
 
-@app.route('/get/gender')
-def get_subclasses():
+@app.route('/get_gender')
+def get_gender():
     return random.choice(Gender)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(debug = True, port = 5000, host = '0.0.0.0')

@@ -92,10 +92,10 @@ Female_Priest = {
 BirthPlace = {
     0: "Pandemonium",
     1: "Empyrean",
-    2: "Arad"
+    2: "Arad",
     3: "Unkown"
 }
-@app.route('/post/status', methods=['POST'])
+@app.route('/post_status', methods=['POST'])
 def post_status():
     Classes = request.json['Classes']
     Gender = request.json['Gender']
@@ -140,4 +140,4 @@ def post_status():
     return jsonify(status) 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(debug = True, port = 5000, host = '0.0.0.0')

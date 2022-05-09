@@ -4,5 +4,3 @@ pytest
 pytest-cov
 requests
 requests_mock
-flask-sqlalchemy
-pymysql
