@@ -7,8 +7,8 @@ import requests, json
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/home', methods=['GET', 'POST'])
 def home():
-    # Classess = requests.get('http://service_2:5002/get_classes').text
-    # Gender = requests.get('http://service_2:5002/get_gender').text
+    # Classess = requests.get('http://service_2:5000/get_classes').text
+    # Gender = requests.get('http://service_2:5000/get_gender').text
 
     # content = {'classess': classes, 'Gender': Gender}
     # status = requests.post('http://service-4:5000/post/status', json=content).json()
