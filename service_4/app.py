@@ -90,6 +90,8 @@ Female_Priest = {
     }
 }
 
+Birth_Place = ['Pandemonium','Empyrean','Arad','Unkown']
+
 @app.route('/post_status', methods=['POST'])
 def post_status():
     classes = request.json['classes']
@@ -126,7 +128,7 @@ def post_status():
         else:
             subclass = random.choice(list(Female_Priest["subclass"].values()))
     
-    birth_place = random.choice(['Pandemonium','Empyrean','Arad','Unkown'])
+    birth_place = random.choice(Birth_Place)
 
     status = {
         "subclass" : subclass,
@@ -136,3 +138,4 @@ def post_status():
 
 if __name__ == '__main__':
     app.run(host = '0.0.0.0', debug=True)
+    
