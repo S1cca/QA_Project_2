@@ -1,7 +1,7 @@
     #!/bin/bash
     ls -l
     source venv/bin/activate
-    declare -a directories=("front_end_api" "day_api" "numbers_api" "rollover_api")
+    declare -a directories=("service_1" "service_2" "service_3" "service_4")
     for dir in "${directories[@]}"
     do
     cd ${dir}
