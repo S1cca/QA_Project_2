@@ -115,18 +115,6 @@ def post_status():
             subclass = random.choice(list(Male_Mage["subclass"].values()))
         else:
             subclass = random.choice(list(Female_Mage["subclass"].values()))
-
-    elif classes == 'Gunner':
-        if gender == 'Male':
-            subclass = random.choice(list(Male_Gunner["subclass"].values()))
-        else:
-            subclass = random.choice(list(Female_Gunner["subclass"].values()))
-
-    elif classes == 'Priest':
-        if gender == 'Male':
-            subclass = random.choice(list(Male_Priest["subclass"].values()))
-        else:
-            subclass = random.choice(list(Female_Priest["subclass"].values()))
     
     birth_place = random.choice(Birth_Place)
 

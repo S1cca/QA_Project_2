@@ -3,7 +3,7 @@ import random
 
 app = Flask(__name__)
 
-classes = ['Slayer','Fighter','Mage','Gunner','Priest']
+classes = ['Slayer','Fighter','Mage']
 
 @app.route('/get_classes')
 def get_classes():

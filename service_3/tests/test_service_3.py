@@ -1,6 +1,5 @@
 from flask import url_for
 from flask_testing import TestCase
-
 from service_3.app import app, gender
 
 class TestBase(TestCase):
