@@ -4,7 +4,7 @@ import random
 app = Flask(__name__)
 
 Male_Slayer = {
-    "SubClass":{
+    "subclass":{
         0: "Blade Master",
         1: "Soul Bender",
         2: "Berserker",
@@ -14,7 +14,7 @@ Male_Slayer = {
 }
 
 Female_Slayer = {
-    "SubClass":{
+    "subclass":{
         0: "Sword Master",
         1: "Demon Slayer",
         2: "Vagabond",
@@ -23,7 +23,7 @@ Female_Slayer = {
     }
 }
 Male_Fighter = {
-    "SubClass":{
+    "subclass":{
         0: "Nen Emperor",
         1: "Tyrant",
         2: "Hades",
@@ -31,7 +31,7 @@ Male_Fighter = {
     }
 }
 Female_Fighter = {
-    "SubClass":{
+    "subclass":{
         0: "Nen Master",
         1: "Striker",
         2: "Brawler",
@@ -39,7 +39,7 @@ Female_Fighter = {
     }
 }
 Male_Mage = {
-    "SubClass":{
+    "subclass":{
         0: "Elemental Bomber",
         1: "Glacial Master",
         2: "Swift Master",
@@ -47,8 +47,8 @@ Male_Mage = {
         4: "Dimension Walker"
     }
 }
-Famale_Mage = {
-    "SubClass":{
+Female_Mage = {
+    "subclass":{
         0: "Elementalist",
         1: "Summoner",
         2: "Battle Mage",
@@ -57,7 +57,7 @@ Famale_Mage = {
     }
 }
 Male_Gunner = {
-    "SubClass":{
+    "subclass":{
         0: "Ranger",
         1: "Launcher",
         2: "Mechanic",
@@ -66,7 +66,7 @@ Male_Gunner = {
     }
 }
 Female_Gunner = {
-    "SubClass":{
+    "subclass":{
         0: "Bloodia",
         1: "Demolitionist",
         2: "Metalheart",
@@ -74,7 +74,7 @@ Female_Gunner = {
     }
 }
 Male_Priest = {
-    "SubClass":{
+    "subclass":{
         0: "Crusader",
         1: "Monk",
         2: "Exorcist",
@@ -82,62 +82,57 @@ Male_Priest = {
     }
 }
 Female_Priest = {
-    "SubClass":{
+    "subclass":{
         0: "Seraph",
         1: "Inquisitor ",
         2: "Shaman",
         3: "Mistress"
     }
 }
-BirthPlace = {
-    0: "Pandemonium",
-    1: "Empyrean",
-    2: "Arad",
-    3: "Unkown"
-}
+
 @app.route('/post_status', methods=['POST'])
 def post_status():
-    Classes = request.json['Classes']
-    Gender = request.json['Gender']
+    classes = request.json['classes']
+    gender = request.json['gender']
 
-    if Classes == 'Slayer':
-        if Gender == 'Male':
-            SubClass = random.choice(list(Male_Slayer["SubClass"].values()))
+    if classes == 'Slayer':
+        if gender == 'Male':
+            subclass = random.choice(list(Male_Slayer["subclass"].values()))
         else:
-            SubClass = random.choice(list(Female_Slayer["SubClass"].values()))
+            subclass = random.choice(list(Female_Slayer["subclass"].values()))
 
 
-    elif Classes == 'Fighter':
-        if Gender == 'Male':
-            SubClass = random.choice(list(Male_Fighter["SubClass"].values()))
+    elif classes == 'Fighter':
+        if gender == 'Male':
+            subclass = random.choice(list(Male_Fighter["subclass"].values()))
         else:
-            SubClass = random.choice(list(Feale_Slayer["SubClass"].values()))
+            subclass = random.choice(list(Female_Slayer["subclass"].values()))
 
-    elif Classes == 'Mage':
-        if Gender == 'Male':
-            SubClass = random.choice(list(Male_Mage["SubClass"].values()))
+    elif classes == 'Mage':
+        if gender == 'Male':
+            subclass = random.choice(list(Male_Mage["subclass"].values()))
         else:
-            SubClass = random.choice(list(Female_Mage["SubClass"].values()))
+            subclass = random.choice(list(Female_Mage["subclass"].values()))
 
-    elif Classes == 'Gunner':
-        if Gender == 'Male':
-            SubClass = random.choice(list(Male_Gunner["SubClass"].values()))
+    elif classes == 'Gunner':
+        if gender == 'Male':
+            subclass = random.choice(list(Male_Gunner["subclass"].values()))
         else:
-            SubClass = random.choice(list(Female_Gunner["SubClass"].values()))
+            subclass = random.choice(list(Female_Gunner["subclass"].values()))
 
-    elif Classes == 'Priest':
-        if Gender == 'Male':
-            SubClass = random.choice(list(Male_Priest["SubClass"].values()))
+    elif classes == 'Priest':
+        if gender == 'Male':
+            subclass = random.choice(list(Male_Priest["subclass"].values()))
         else:
-            SubClass = random.choice(list(Female_Priest["SubClass"].values()))
+            subclass = random.choice(list(Female_Priest["subclass"].values()))
     
-    BirthPlace = random.choice(list(BirthPlace.values()))
+    birth_place = random.choice(['Pandemonium','Empyrean','Arad','Unkown'])
 
     status = {
-        "SubClass" : SubClass,
-        "BirthPlace" : BirthPlace
+        "subclass" : subclass,
+        "birth_place" : birth_place
     }
-    return jsonify(status) 
+    return status
 
 if __name__ == '__main__':
-    app.run(debug = True, port = 5000, host = '0.0.0.0')
+    app.run(host = '0.0.0.0', debug=True)

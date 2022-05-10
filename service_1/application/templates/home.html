@@ -1,6 +1,31 @@
-{% extends 'heading.html' %}
+<html>
 
+<body>
+    <style>
+        h2 {
+            text-align: center;
+        }
 
-<title {text-align: center;} style="padding-left:40px">
-    Home Page
-</title>
+        p {
+            text-align: center;
+        }
+
+        div {
+            text-align: center;
+        }
+    </style>
+
+    <body>
+        <div class="header">
+            <h1><br>Generate a random DFO Character<br></h1>
+        </div>
+    </body>
+    <p>You have made a {{ classes }}</p>
+    <p>Gender: {{ gender }}</p>
+    <p>SubClass: {{ status.subclass }}</p>
+    <p>Born in {{ status.birth_place }}</p>
+    <p><a onClick="window.location.reload()">
+            <button type="button">Generate </button></a></p>
+</body>
+
+</html>

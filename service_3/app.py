@@ -3,11 +3,11 @@ import random
 
 app = Flask(__name__)
 
-Gender = ['Male','Female']
+gender = ['Male','Female']
 
 @app.route('/get_gender')
 def get_gender():
-    return random.choice(Gender)
+    return random.choice(gender)
 
 if __name__ == '__main__':
-    app.run(debug = True, port = 5000, host = '0.0.0.0')
+    app.run(host = '0.0.0.0', debug=True)

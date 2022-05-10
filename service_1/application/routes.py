@@ -7,13 +7,11 @@ import requests, json
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/home', methods=['GET', 'POST'])
 def home():
-    # Classess = requests.get('http://service_2:5000/get_classes').text
-    # Gender = requests.get('http://service_2:5000/get_gender').text
+    classes = requests.get('http://service_2:5000/get_classes').text
+    gender = requests.get('http://service_3:5000/get_gender').text
 
-    # content = {'classess': classes, 'Gender': Gender}
-    # status = requests.post('http://service-4:5000/post/status', json=content).json()
-
+    character = {'classes': classes, 'gender': gender}
+    status = requests.post('http://service_4:5000/post_status', json=character).json()
     # context = db.session.query(Classes).order_by(Classes.id.desc()).first()
 
-    # statement = f"You have generated a new class: {Classes} with the gender of {Gender} \n "
-    return render_template('home.html')
+    return render_template('home.html',classes=classes, gender=gender, status = status )
