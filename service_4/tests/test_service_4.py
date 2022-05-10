@@ -1,8 +1,8 @@
 from flask import url_for
 from flask_testing import TestCase
-from service_2.app import classes
-from service_3.app import gender
-from service_4.app import app, post_status, Male_Slayer, Female_Slayer, Male_Fighter, Female_Fighter, Male_Mage, Female_Mage, Birth_Place
+from service_2.application import classes
+from service_3.application import gender
+from service_4.application import app, post_status, Male_Slayer, Female_Slayer, Male_Fighter, Female_Fighter, Male_Mage, Female_Mage, Birth_Place
 
 class TestBase(TestCase):
     def create_app(self):
