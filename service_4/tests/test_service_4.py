@@ -14,6 +14,7 @@ class TestResponse(TestBase):
     
     def test_birthplace(self):
         response = self.client.post(url_for('post_status'), json={'classes': 'Slayer', 'gender':'Male'})
+        self.assertEqual(response.status_code, 200)
         self.assertIn("birth_place",response.data.decode())
 
     def test_MaleSlayer(self):

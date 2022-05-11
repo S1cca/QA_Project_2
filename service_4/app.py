@@ -77,8 +77,6 @@ def post_status():
     birth_place = random.choice(Birth_Place)
 
     status = {
-        "class" : classes,
-        "gender" : gender,
         "subclass" : subclass,
         "birth_place" : birth_place
     }
