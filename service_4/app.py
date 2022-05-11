@@ -4,91 +4,49 @@ import random
 app = Flask(__name__)
 
 Male_Slayer = {
-    "subclass":{
-        0: "Blade Master",
-        1: "Soul Bender",
-        2: "Berserker",
-        3: "Asura",
-        4: "Ghostblade"
-    }
+    "Blade Master",
+    "Soul Bender",
+    "Berserker",
+    "Asura",
+    "Ghostblade"
 }
 
 Female_Slayer = {
-    "subclass":{
-        0: "Sword Master",
-        1: "Demon Slayer",
-        2: "Vagabond",
-        3: "Dark Templar",
-        4: "Spectre"
-    }
+    "Sword Master",
+    "Demon Slayer",
+    "Vagabond",
+    "Dark Templar",
+    "Spectre"
 }
 Male_Fighter = {
-    "subclass":{
-        0: "Nen Emperor",
-        1: "Tyrant",
-        2: "Hades",
-        3: "Titan"
+    "Nen Emperor",
+    "Tyrant",
+    "Hades",
+    "Titan"
     }
-}
+
 Female_Fighter = {
-    "subclass":{
-        0: "Nen Master",
-        1: "Striker",
-        2: "Brawler",
-        3: "Grappler"
+    "Nen Master",
+    "Striker",
+    "Brawler",
+    "Grappler"
     }
-}
+
 Male_Mage = {
-    "subclass":{
-        0: "Elemental Bomber",
-        1: "Glacial Master",
-        2: "Swift Master",
-        3: "Blood Mage",
-        4: "Dimension Walker"
+    "Elemental Bomber",
+    "Glacial Master",
+    "Swift Master",
+    "Blood Mage",
+    "Dimension Walker"
     }
-}
+
 Female_Mage = {
-    "subclass":{
-        0: "Elementalist",
-        1: "Summoner",
-        2: "Battle Mage",
-        3: "Witch",
-        4: "Enchantress"
+    "Elementalist",
+    "Summoner",
+    "Battle Mage",
+    "Witch",
+    "Enchantress"
     }
-}
-Male_Gunner = {
-    "subclass":{
-        0: "Ranger",
-        1: "Launcher",
-        2: "Mechanic",
-        3: "Spitfire",
-        4: "Assault"
-    }
-}
-Female_Gunner = {
-    "subclass":{
-        0: "Bloodia",
-        1: "Demolitionist",
-        2: "Metalheart",
-        3: "Freyja"
-    }
-}
-Male_Priest = {
-    "subclass":{
-        0: "Crusader",
-        1: "Monk",
-        2: "Exorcist",
-        3: "Avenger"
-    }
-}
-Female_Priest = {
-    "subclass":{
-        0: "Seraph",
-        1: "Inquisitor ",
-        2: "Shaman",
-        3: "Mistress"
-    }
-}
 
 Birth_Place = ['Pandemonium','Empyrean','Arad','Unkown']
 
@@ -99,30 +57,32 @@ def post_status():
 
     if classes == 'Slayer':
         if gender == 'Male':
-            subclass = random.choice(list(Male_Slayer["subclass"].values()))
+            subclass = random.choice(list(Male_Slayer))
         else:
-            subclass = random.choice(list(Female_Slayer["subclass"].values()))
+            subclass = random.choice(list(Female_Slayer))
 
 
     elif classes == 'Fighter':
         if gender == 'Male':
-            subclass = random.choice(list(Male_Fighter["subclass"].values()))
+            subclass = random.choice(list(Male_Fighter))
         else:
-            subclass = random.choice(list(Female_Slayer["subclass"].values()))
+            subclass = random.choice(list(Female_Slayer))
 
     elif classes == 'Mage':
         if gender == 'Male':
-            subclass = random.choice(list(Male_Mage["subclass"].values()))
+            subclass = random.choice(list(Male_Mage))
         else:
-            subclass = random.choice(list(Female_Mage["subclass"].values()))
+            subclass = random.choice(list(Female_Mage))
     
     birth_place = random.choice(Birth_Place)
 
     status = {
+        "class" : classes,
+        "gender" : gender,
         "subclass" : subclass,
         "birth_place" : birth_place
     }
-    return status
+    return jsonify(status)
 
 if __name__ == '__main__':
     app.run(host = '0.0.0.0', debug=True)
