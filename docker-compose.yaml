@@ -25,16 +25,22 @@ services:
     container_name: service_2
     image: docker.io/de1ec279ff75/service_2:latest
     build: ./service_2
+    deploy:
+      replicas: 3
 
   service_3:
     container_name: service_3
     image: docker.io/de1ec279ff75/service_3:latest
     build: ./service_3
+    deploy:
+      replicas: 3
 
   service_4:
     container_name: service_4
     image: docker.io/de1ec279ff75/service_4:latest
     build: ./service_4
+    deploy:
+      replicas: 3
     depends_on:
       - service_2
       - service_3
