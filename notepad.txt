@@ -1,3 +1,6 @@
 export DATABASE_URI=mysql+pymysql://root:password@35.242.133.231:3306/project_2
 
 Force Build:  docker-compose up --build -d
+
+github token key:
+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
