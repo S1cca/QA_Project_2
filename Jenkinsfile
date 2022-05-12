@@ -6,7 +6,7 @@ pipeline {
                 sh "bash test.sh"
             }
         }
-        stage('Build and push images') {
+        stage('Build and Push Images') {
             environment {
                 DOCKER_UNAME = credentials('docker_uname')
                 DOCKER_PWORD = credentials('docker_pword')
@@ -17,18 +17,18 @@ pipeline {
                 sh "docker-compose push"
             }
         }
-        stage('Ansible'){
-            steps {
-                sh "bash ansible.sh"
-            }
-        }
-        // stage('Deploying') {
+        // stage('Ansible'){
         //     steps {
-        //         sh "scp -i /home/jenkins/.ssh/id_rsa docker-compose.yaml swarm-master:/home/jenkins/docker-compose.yaml"
-        //         sh "scp -i /home/jenkins/.ssh/id_rsa nginx.conf swarm-master:/home/jenkins/nginx.conf"
-        //         sh "ansible-playbook -i configuration/inventory.yaml configuration/playbook.yaml"
+        //         sh "bash ansible.sh"
         //     }
         // }
+        stage('Deploying') {
+            steps {
+                sh "scp -i /home/jenkins/.ssh/id_rsa docker-compose.yaml swarm-master:/home/jenkins/docker-compose.yaml"
+                sh "scp -i /home/jenkins/.ssh/id_rsa nginx.conf swarm-master:/home/jenkins/nginx.conf"
+                sh "ansible-playbook -i configuration/inventory.yaml configuration/playbook.yaml"
+            }
+        }
     }
     // post {
     //     always {
