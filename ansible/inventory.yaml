@@ -1,9 +1,9 @@
 all:
   children:
-    managers:
+    swarm-master:
       hosts:
         swarm-master:
-    workers:
+    swarm-worker:
       hosts:
         swarm-worker:
         
