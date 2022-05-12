@@ -12,6 +12,6 @@
 - name: "Deploy app"
   docker_stack:
     state: present
-    name: event_generator
+    name: DFO Character Generator
     compose:
       - /home/jenkins/docker-compose.yaml
