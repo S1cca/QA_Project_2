@@ -1,8 +1,11 @@
 - hosts: nginx
   become: yes
   roles:
+    
 
-- hosts: all
+- hosts:
+  - swarm_managers
+  - swarm_workers
   become: yes
   roles:
     - installing-docker
