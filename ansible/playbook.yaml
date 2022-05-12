@@ -1,11 +1,8 @@
 - hosts: nginx
   become: yes
   roles:
-    - load-balancer
 
-- hosts:
-  - swarm_managers
-  - swarm_workers
+- hosts: all
   become: yes
   roles:
     - installing-docker
