@@ -3,12 +3,12 @@
   roles: 
   - install-docker
 
-- hosts: swarm-master
+- hosts: swarm_master
   become: true
   roles:
   - swarm-master
 
-- hosts: swarm-worker
+- hosts: swarm_worker
   become: true
   roles:
   - swarm-worker
