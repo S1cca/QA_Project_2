@@ -22,13 +22,13 @@ pipeline {
                 sh "bash ansible.sh"
             }
         }
-        stage('Deploying') {
-            steps {
-                sh "scp -i ~/.ssh/id_rsa.pub docker-compose.yaml swarm-master:/home/jenkins/docker-compose.yaml"
-                sh "scp -i ~/.ssh/id_rsa.pub nginx.conf swarm-master:/home/jenkins/nginx.conf"
-                sh "ansible-playbook -i configuration/inventory.yaml configuration/playbook.yaml"
-            }
-        }
+        // stage('Deploying') {
+        //     steps {
+        //         sh "scp -i ~/.ssh/id_rsa.pub docker-compose.yaml swarm-master:/home/jenkins/docker-compose.yaml"
+        //         sh "scp -i ~/.ssh/id_rsa.pub nginx.conf swarm-master:/home/jenkins/nginx.conf"
+        //         sh "ansible-playbook -i configuration/inventory.yaml configuration/playbook.yaml"
+        //     }
+        // }
     }
     // post {
     //     always {
