@@ -26,7 +26,7 @@ pipeline {
             steps {
                 sh "scp -i /home/jenkins/.ssh/id_rsa docker-compose.yaml swarm-master:/home/jenkins/docker-compose.yaml"
                 sh "scp -i /home/jenkins/.ssh/id_rsa nginx.conf swarm-master:/home/jenkins/nginx.conf"
-                sh "ansible-playbook -i configuration/inventory.yaml configuration/playbook.yaml"
+                sh "ansible-playbook -i ansible/inventory.yaml ansible/playbook.yaml"
             }
         }
     }
