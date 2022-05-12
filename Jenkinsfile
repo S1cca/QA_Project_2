@@ -27,11 +27,7 @@ pipeline {
     }
     post {
         always {
-            junit '**/*.xml'
-            cobertura coberturaReportFile: 'service_1/coverage.xml', failNoReports: false
-            cobertura coberturaReportFile: 'service_2/coverage.xml', failNoReports: false
-            cobertura coberturaReportFile: 'service_3/coverage.xml', failNoReports: false
-            cobertura coberturaReportFile: 'service_4/coverage.xml', failNoReports: false
+            sh "docker logout"
+            }
         }
     }
-}
