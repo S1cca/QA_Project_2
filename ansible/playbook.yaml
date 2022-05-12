@@ -1,14 +1,14 @@
 - hosts: all
   become: true
   roles: 
-  - docker-install
+    - docker-install
 
 - hosts: swarm_managers
   become: true
   roles:
-  - swarm-manager
+    - swarm-manager
 
 - hosts: swarm_workers
   become: true
   roles:
-  - swarm-worker
+    - swarm-worker
