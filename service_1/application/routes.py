@@ -11,3 +11,9 @@ def home():
     status = requests.post('http://service_4:5000/post_status', json=character).json()
 
     return render_template('home.html',classes=classes, gender=gender, status = status )
+
+
+
+
+
+    
