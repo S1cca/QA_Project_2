@@ -3,50 +3,17 @@ import random
 
 app = Flask(__name__)
 
-Male_Slayer = {
-    "Blade Master",
-    "Soul Bender",
-    "Berserker",
-    "Asura",
-    "Ghostblade"
-}
+Male_Slayer = {"Blade Master","Soul Bender","Berserker","Asura","Ghostblade"}
 
-Female_Slayer = {
-    "Sword Master",
-    "Demon Slayer",
-    "Vagabond",
-    "Dark Templar",
-    "Spectre"
-}
-Male_Fighter = {
-    "Nen Emperor",
-    "Tyrant",
-    "Hades",
-    "Titan"
-    }
+Female_Slayer = {"Sword Master","Demon Slayer","Vagabond","Dark Templar","Spectre"}
 
-Female_Fighter = {
-    "Nen Master",
-    "Striker",
-    "Brawler",
-    "Grappler"
-    }
+Male_Fighter = {"Nen Emperor","Tyrant","Hades","Titan"}
 
-Male_Mage = {
-    "Elemental Bomber",
-    "Glacial Master",
-    "Swift Master",
-    "Blood Mage",
-    "Dimension Walker"
-    }
+Female_Fighter = {"Nen Master","Striker","Brawler","Grappler"}
 
-Female_Mage = {
-    "Elementalist",
-    "Summoner",
-    "Battle Mage",
-    "Witch",
-    "Enchantress"
-    }
+Male_Mage = {"Elemental Bomber","Glacial Master","Swift Master","Blood Mage","Dimension Walker"}
+
+Female_Mage = {"Elementalist","Summoner","Battle Mage","Witch","Enchantress"}
 
 Birth_Place = ['Pandemonium','Empyrean','Arad','Unkown']
 
@@ -84,4 +51,7 @@ def post_status():
 
 if __name__ == '__main__':
     app.run(host = '0.0.0.0', debug=True)
+    
+
+
     
