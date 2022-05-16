@@ -21,3 +21,5 @@ class TestResponse(TestBase):
             response = self.client.get(url_for('home'))
             self.assertEqual(response.status_code,200)
 
+
+
