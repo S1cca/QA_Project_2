@@ -18,39 +18,98 @@ Created By Wei Yao
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I have used Treloo Board to manage and organise my workflow, so I would be able to follow up all requirements of this project and avoid and missing tasks, and what to do next once a task was completed, as well as tracking my overall progress.
 
+![image](https://user-images.githubusercontent.com/76656869/168582162-995fca68-f041-4fb6-b4ba-9a92527a7ab4.png)
+
+
 ### Risk assessment
+
+ > ![image](https://user-images.githubusercontent.com/76656869/168583074-732cf560-5e69-4a01-bbba-56d15f9970ab.png)
+
+### Service
+The following diagram shows how services interact with each other
+ > ![image](https://user-images.githubusercontent.com/76656869/168584180-579b0c06-97a2-4659-b119-80a679d72273.png)
+
 
 ### My code
 
 #### Service 1
 
- > This is the code for my service 1
+##### This is the code for my service 1
  > ![image](https://user-images.githubusercontent.com/76656869/168469996-3368eab4-c2ab-44de-b323-dfd0cde6a733.png)
+##### Directory structure
+ > ![image](https://user-images.githubusercontent.com/76656869/168583177-e8ee292b-a5e2-423f-bd84-e4a027119328.png)
+
 
 #### Service 2
 
- > This is the code for my service 2
+ ##### This is the code for my service 2
  > ![image](https://user-images.githubusercontent.com/76656869/168470279-33787f70-6f54-45b7-9f8a-d042d54d751f.png)
 
 #### Service 3
 
- > This is the code for my service 3
+##### This is the code for my service 3
  > ![image](https://user-images.githubusercontent.com/76656869/168470297-c7b726f6-1cfb-4517-944b-4d70fea64b55.png)
 
 #### Service 4
 
- > This is the code for my service 4
+##### This is the code for my service 4
  > ![image](https://user-images.githubusercontent.com/76656869/168470209-e0887351-4247-46c5-a9d7-c73e42ca262c.png)
  > ![image](https://user-images.githubusercontent.com/76656869/168470224-1ec4ea58-9817-45b7-83d5-83b52eb2a29a.png)
 
 ### Pipeline
 
-### Services
+The following diagram shows how the Pipeline should run.
+ > ![image](https://user-images.githubusercontent.com/76656869/168600211-c9e159c5-3bf1-4bd6-8713-6ed394d98513.png)
+
+
 
 ### Testing
+##### Test code for Service 1
+ > ![image](https://user-images.githubusercontent.com/76656869/168589758-34969a26-8447-44dd-948f-2fae1f5e47a8.png)
+##### Service 1 test report
+ > ![image](https://user-images.githubusercontent.com/76656869/168587709-7195880b-be88-46f6-8715-11c79efc45cb.png)
+
+
+##### Test code for service 2
+ > ![image](https://user-images.githubusercontent.com/76656869/168589662-bae3effb-bd94-4c0f-a9ce-340353aa84c5.png)
+##### Service 2 test report
+ > ![image](https://user-images.githubusercontent.com/76656869/168589517-847564e5-047d-4ded-bd95-bad1f9c33a60.png)
+
+##### Test code for service 3
+ > ![image](https://user-images.githubusercontent.com/76656869/168590668-93cfbe2d-02ab-4e84-83b6-7633f43a9580.png)
+##### Service 3 test report
+ > ![image](https://user-images.githubusercontent.com/76656869/168590832-5dfc7892-5401-40e4-872b-a24df49b4946.png)
+
+#### Test code for service 4
+ > ![image](https://user-images.githubusercontent.com/76656869/168590917-99416e1a-1406-42f4-8b26-1c0969f7b50e.png)
+ > ![image](https://user-images.githubusercontent.com/76656869/168590962-c0598da9-2270-4dba-af3c-5c8eb210d987.png)
+##### Service 4 test report
+ > ![image](https://user-images.githubusercontent.com/76656869/168591362-b7130e2c-1d3f-45bb-b5c3-a8973730a23f.png)
+
+### Build Automation
+ > To deploy this application, a list of commonds need to be exceuted when running on machine, such as python, docker, etc. I have created Jenkinsfile to excute these essential bash scripts. These scripts would hold the terminal commands needed to access the testing package for each service; build docker images; log in to docker and to push the images to docker hub, it is also used to run ansible scripts in which directs playbook and inventory files. These files would assign roles and tasks for using Docker Swarm to orchestrate continuous deployment. Once the swarm is up and running, replicas of the application are duplicated throughout the swarm nodes, ensuring that any code updates are propagated and the program's uptime is maximised. A webhook was used to offer a new dimension to the deployment. This effectively tied the pipeline to the associated github branch, causing a new pipeline to execute whenever changes to the code base were pushed.
+ #### The pipeline was defined through four distinct stages:
+ 
+  * Testing
+  * Build and Push Images
+  * Ansible
+  * Deploying
+
+ > ![image](https://user-images.githubusercontent.com/76656869/168608376-348471e7-5f0a-4dbe-8998-6ef1cbf4664a.png)
+
+Within Jenkins a link to the github repository was introduced and a script with build, test and deploy stages would run. The successfull build resulted in an hosted application which produced the following console output within Jenkins.
+
+ > ![image](https://user-images.githubusercontent.com/76656869/168605252-62a58ca5-e8e9-4042-8d99-1726f2899a9a.png)
+
 
 ### Future Improvement
+ > For future improvement: 
+ > * To be able to store generated character into a SQL database for reference
+ > * Allowing users to choose a type of Character they want to generate
+ > * UI and HTML formating 
 
 ### Acknowledgement
 Many Thanks to people have assisted me with this project
- > Huijing Yu, QA Community, Sacre Victoria, Tony Zherka, Simon Hart
+ > * Huijing Yu 
+ > * QA Community, Sacre Victoria, Tony Zherka, Simon Hart
+ > * JoJo
